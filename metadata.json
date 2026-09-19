@@ -1,0 +1,6 @@
+{
+  "name": "Budget Buddy",
+  "description": "A mobile-first personal finance and budgeting app with multi-currency support and Gemini-powered AI financial advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
