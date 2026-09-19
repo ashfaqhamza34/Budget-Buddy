@@ -119,13 +119,13 @@ export const App: React.FC = () => {
 
     const net = income - expenses;
     const monthlyBudgetTotal = budget.overallBudget || 0;
-    const remainingBudget = monthlyBudgetTotal > 0 ? monthlyBudgetTotal - expenses : 0;
+    const remainingBudget = monthlyBudgetTotal > 0 ? monthlyBudgetTotal - expenses : undefined;
     const avgDailySpendRemaining =
       monthlyBudgetTotal > 0
         ? daysLeftInMonth > 0
-          ? Math.max(0, remainingBudget / daysLeftInMonth)
-          : Math.max(0, remainingBudget)
-        : 0;
+          ? Math.max(0, (monthlyBudgetTotal - expenses) / daysLeftInMonth)
+          : Math.max(0, monthlyBudgetTotal - expenses)
+        : undefined;
 
     const categoryBreakdown = Object.entries(catMap).map(([category, spent]) => {
       const catBudget = budget.categoryBudgets?.[category] || 0;
