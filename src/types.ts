@@ -109,9 +109,9 @@ export interface FinancialContext {
   totalExpenses: number;
   netBalance: number;
   monthlyBudget: number;
-  remainingBudget: number;
+  remainingBudget: number | undefined;
   daysLeftInMonth: number;
-  avgDailySpendRemaining: number;
+  avgDailySpendRemaining: number | undefined;
   categoryBreakdown: CategorySummary[];
   recentTransactions: Array<{
     type: TransactionType;
